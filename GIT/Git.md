@@ -225,6 +225,9 @@ git reset HEAD file_name.txt
 # Reset to a previous commit (hard reset will lose changes)
 git reset --hard commit_hash
 
+# Reset to a previous commit by one step back (HEAD~2 = two commits before)
+git reset --hard HEAD~1   
+
 ```
 
 ### **git revert**

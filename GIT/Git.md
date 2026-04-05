@@ -371,6 +371,9 @@ git clean -n
 # Remove untracked files (actual removal)
 git clean -f
 
+# Remove including directories
+git clean -f -d
+
 ```
 
 ---

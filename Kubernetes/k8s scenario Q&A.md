@@ -16,7 +16,7 @@ Why would the scheduler refuse to place Pods on nodes that appear to have 70% fr
 - Distinguish between **actual usage** (what `top` or Prometheus shows) and **resource requests** (what the **scheduler** uses).  
 - If existing Pods have high **Requests** but low actual usage, the scheduler treats that **requested capacity as reserved**, even if it's not currently used.  
 - You should also check for:
-  - **Pod Affinity / Anti-Affinity** rules
+  - **Pod Affinity / Anti-Affinity** rules - [explanation](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Concepts/Pod-Affinity-Antiaffinity.md)
  
     
   - **Taints / Tolerations**  - [explanation](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Concepts/Taints-and-Tolerations.md)

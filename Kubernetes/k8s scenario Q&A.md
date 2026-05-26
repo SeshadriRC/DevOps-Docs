@@ -16,9 +16,20 @@ Why would the scheduler refuse to place Pods on nodes that appear to have 70% fr
 - Distinguish between **actual usage** (what `top` or Prometheus shows) and **resource requests** (what the **scheduler** uses).  
 - If existing Pods have high **Requests** but low actual usage, the scheduler treats that **requested capacity as reserved**, even if it's not currently used.  
 - You should also check for:
-  - **Pod Affinity / Anti-Affinity** rules  
-  - **Taints / Tolerations**  
+  - **Pod Affinity / Anti-Affinity** rules
+ 
+    
+  - **Taints / Tolerations**  - [explanation](https://github.com/SeshadriRC/devops-cloud-interview-guide/blob/main/my-guide/Kubernetes/Concepts/Taints-and-Tolerations.md)
   These might be silently disqualifying those nodes from being chosen.
+
+   - Do not schedule Pods here unless they explicitly tolerate this node.
+```bash
+kubectl taint nodes worker-1 env=prod:NoSchedule
+```
+- Meaning:
+
+Node worker-1 rejects all Pods
+Unless Pod has matching toleration
 
 ---
 

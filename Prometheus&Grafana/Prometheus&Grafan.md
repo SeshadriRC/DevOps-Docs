@@ -71,11 +71,27 @@ Prometheus automatically discovers Kubernetes components through:
 
 No manual configuration is needed because `kube-prometheus-stack` provides default scraping configs.
 
+### Service details
+
+```bash
+root@controlplane:~$ kubectl get svc -n monitoring
+NAME                                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+alertmanager-operated                     ClusterIP   None             <none>        9093/TCP,9094/TCP,9094/UDP   12m
+prometheus-grafana                        ClusterIP   10.96.206.179    <none>        80/TCP                       12m
+prometheus-kube-prometheus-alertmanager   ClusterIP   10.110.42.33     <none>        9093/TCP,8080/TCP            12m
+prometheus-kube-prometheus-operator       ClusterIP   10.103.26.242    <none>        443/TCP                      12m
+prometheus-kube-prometheus-prometheus     ClusterIP   10.101.191.195   <none>        9090/TCP,8080/TCP            12m
+prometheus-kube-state-metrics             ClusterIP   10.97.231.205    <none>        8080/TCP                     12m
+prometheus-operated                       ClusterIP   None             <none>        9090/TCP                     12m
+prometheus-prometheus-node-exporter       ClusterIP   10.109.233.240   <none>        9100/TCP                     12m
+```
+
 ### PART 5 — Access Prometheus Dashboard (Port Forwarding)
 
 Use this command to port-forward Prometheus:
 
 ```bash
+# --address -> is nothing but local
 kubectl port-forward --address 0.0.0.0 -n monitoring svc/prometheus-kube-prometheus-prometheus 9090:9090
 ```
 
@@ -122,7 +138,7 @@ up{job="kubelet"}
 **Step 1 — Port Forward Grafana**
 
 ```bash
-kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80
+kubectl port-forward --address 0.0.0.0 -n monitoring svc/prometheus-grafana 3000:80
 ```
 
 Open Grafana in your browser:

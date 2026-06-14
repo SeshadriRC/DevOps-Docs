@@ -51,6 +51,8 @@ To Install the latest Version:
 
  `sudo usermod -aG docker jenkins`
 
+ `sudo systemctl restart jenkins`
+
 ---
 
 ## **2. Basic Docker Commands**

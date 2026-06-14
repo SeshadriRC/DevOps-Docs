@@ -61,6 +61,12 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
+
+```bash
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+```
+
 **Note: ** By default, Jenkins will not be accessible to the external world due to the inbound traffic restriction by AWS. Open port 8080 in the inbound traffic rules as show below.
 
 - EC2 > Instances > Click on <Instance-ID>
@@ -84,6 +90,11 @@ After you login to Jenkins,
       - Enter the Administrator password
       
 <img width="1291" alt="Screenshot 2023-02-01 at 10 56 25 AM" src="https://user-images.githubusercontent.com/43399466/215959008-3ebca431-1f14-4d81-9f12-6bb232bfbee3.png">
+
+- latest version of jenkins
+
+<img width="1477" height="837" alt="image" src="https://github.com/user-attachments/assets/ade1a899-9e02-4e0b-9c64-14267e95a235" />
+
 
 ### Click on Install suggested plugins
 

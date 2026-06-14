@@ -53,6 +53,8 @@ To Install the latest Version:
 
  `sudo systemctl restart jenkins`
 
+ `sudo sytemctl restart docker`
+
 ---
 
 ## **2. Basic Docker Commands**

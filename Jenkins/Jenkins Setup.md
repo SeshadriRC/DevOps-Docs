@@ -34,6 +34,8 @@ Pre-Requisites:
 
 ### Run the below commands to install Java and Jenkins
 
+[Dont follow below as its old, so follow official doc](https://www.jenkins.io/doc/book/installing/linux/#debianubuntu)
+
 Install Java
 
 ```
@@ -57,6 +59,12 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get install jenkins
+```
+
+
+```bash
+systemctl start jenkins
+systemctl status jenkins
 ```
 
 **Note: ** By default, Jenkins will not be accessible to the external world due to the inbound traffic restriction by AWS. Open port 8080 in the inbound traffic rules as show below.

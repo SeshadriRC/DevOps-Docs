@@ -32,6 +32,8 @@ Install Jenkins, configure Docker as agent, set up cicd, deploy applications to 
 Pre-Requisites:
  - Java (JDK)
 
+[follow the official doc](https://www.jenkins.io/doc/book/installing/linux/#debianubuntu)
+
 ### Run the below commands to install Java and Jenkins
 
 Install Java

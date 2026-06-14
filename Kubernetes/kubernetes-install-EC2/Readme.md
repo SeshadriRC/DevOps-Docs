@@ -1,4 +1,4 @@
-### Before running the script perform below things in server.
+### Before running the script perform below things in server. Also run the script as a root user.
 
 
 Now we found the exact issue.
